@@ -5,10 +5,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.get('/', (request, response) => {
-    //response.send('Olá Fullstack Lab')
-    response.render('home', {
-        date: new Date()
-    })
+    response.render('home')
 })
 
 app.listen(3000, (err) =>{
@@ -17,4 +14,8 @@ app.listen(3000, (err) =>{
     }else{
         console.log('Servidor iniciado')
     }
+})
+
+app.get('/vaga', (request, response) => {
+    response.render('vaga')
 })
